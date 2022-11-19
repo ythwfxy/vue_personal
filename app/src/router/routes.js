@@ -1,0 +1,21 @@
+export default [
+    {
+        path:"/home",
+        name:'home',
+        component:()=>import('../components/Home/home.vue'),
+    },
+    {
+        path:"/pict",
+        name:'pict',
+        component:()=>import('../pages/pict/index.vue'),
+    },
+    {
+        path:'*',
+        redirect:'/home'
+    },
+    {
+        path:"/thinking",
+        name:'thinking',
+        component:()=>import('../pages/thinking/index.vue'),
+    },
+]
