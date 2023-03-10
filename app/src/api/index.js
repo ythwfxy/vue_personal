@@ -18,3 +18,6 @@ export const reqThinking=()=>{
 export const reqInfo=(params)=>{
     return requests({url:'http://127.0.0.1:80/api/pic',method:'post',data:Qs.stringify(params)})
 }
+export const reqStudy=()=>{
+    return requests({url:'http://127.0.0.1:80/api/study'})
+}

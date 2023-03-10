@@ -49,6 +49,17 @@ router.post('/pic', (req, res) => {
     })
     
 })
-
-
+var node_study
+db.query('select theme,content1,content2 from node_study',(err,results)=>{
+    if(err) return console.log(err.message)
+    //如果select 结果为数组
+    node_study=results
+})
+router.get('/study',(req,res)=>{
+    res.send({
+        status:0,//0成功  1失败
+        msg:'GET 请求成功',
+        data:node_study
+    })
+})
 module.exports=router

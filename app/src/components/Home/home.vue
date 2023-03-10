@@ -64,7 +64,7 @@
             </div>
             <div class="second_row">
                 <div class="photo introduction item" @click="$router.push({name:'pict'})"><i class="iconfont icon-tupian"></i><span>图片</span></div>
-                <div class="friend introduction item"><i class="iconfont icon-pengyou"></i><span>邻居</span></div>
+                <div class="friend introduction item" @click="$router.push({name:'study'})"><i class="iconfont icon-pengyou"></i><span>学习</span></div>
                 <div class="other introduction item" @click="changeBac"><i class="iconfont icon-qita"></i><span>其他</span></div>
             </div>
         </div>

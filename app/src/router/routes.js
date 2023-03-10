@@ -18,4 +18,9 @@ export default [
         name:'thinking',
         component:()=>import('../pages/thinking/index.vue'),
     },
+    {
+        path:"/study",
+        name:'study',
+        component:()=>import('../pages/study/index.vue')
+    }
 ]

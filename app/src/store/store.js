@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import {reqOnetalk,reqWeather} from '@/api'
-import { reqThinking,reqInfo } from '../api'
+import { reqThinking,reqInfo, reqStudy } from '../api'
 Vue.use(Vuex)
 const state={
 
@@ -10,7 +10,8 @@ const state={
     weaTher:[],
     thinking:[],
     pic:[],
-    Info:[]
+    Info:[],
+    study:[]
 }
 const mutations={
     ONETALK(state,data){
@@ -29,6 +30,9 @@ const mutations={
         state.pic=data.data.pic
         state.Info=data.data.Info
     },
+    STUDY(state,data){
+        state.study=data.data
+    }
 }
 const actions={
     //通过API接口函数调用 向服务器发请求获取数据
@@ -38,7 +42,7 @@ const actions={
             commit('ONETALK',result.data)
         }
     },
-    //获取首页轮播图
+    //获取天气
     async Weather({commit}){
         let result=await reqWeather()
         if(result.status===200){
@@ -63,6 +67,14 @@ const actions={
             commit('PICINFO',result.data)
         }
     },
+    // 获取学习内容
+    async Study({commit}){
+        let result=await reqStudy()
+        if(result.status===200){
+            
+            commit('STUDY',result.data)
+        }
+    }
 }
 const getters={}
 export default new Vuex.Store({
